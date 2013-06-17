@@ -16,6 +16,8 @@
 		F8106FE7176F2621006E7212 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F8106FE6176F2621006E7212 /* Default.png */; };
 		F8106FE9176F2621006E7212 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8106FE8176F2621006E7212 /* Default@2x.png */; };
 		F8106FEB176F2621006E7212 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8106FEA176F2621006E7212 /* Default-568h@2x.png */; };
+		F8106FF6176F29BA006E7212 /* LogTracer.m in Sources */ = {isa = PBXBuildFile; fileRef = F8106FF3176F29BA006E7212 /* LogTracer.m */; };
+		F8106FF7176F29BA006E7212 /* UncaughtExceptionEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = F8106FF5176F29BA006E7212 /* UncaughtExceptionEngine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		F8106FE6176F2621006E7212 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		F8106FE8176F2621006E7212 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F8106FEA176F2621006E7212 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F8106FF2176F29BA006E7212 /* LogTracer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogTracer.h; sourceTree = "<group>"; };
+		F8106FF3176F29BA006E7212 /* LogTracer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogTracer.m; sourceTree = "<group>"; };
+		F8106FF4176F29BA006E7212 /* UncaughtExceptionEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionEngine.h; sourceTree = "<group>"; };
+		F8106FF5176F29BA006E7212 /* UncaughtExceptionEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionEngine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 		F8106FDA176F2621006E7212 /* LogTracer */ = {
 			isa = PBXGroup;
 			children = (
+				F8106FF1176F29BA006E7212 /* Classes */,
 				F8106FE3176F2621006E7212 /* AppDelegate.h */,
 				F8106FE4176F2621006E7212 /* AppDelegate.m */,
 				F8106FDB176F2621006E7212 /* Supporting Files */,
@@ -97,6 +104,17 @@
 				F8106FEA176F2621006E7212 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8106FF1176F29BA006E7212 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F8106FF2176F29BA006E7212 /* LogTracer.h */,
+				F8106FF3176F29BA006E7212 /* LogTracer.m */,
+				F8106FF4176F29BA006E7212 /* UncaughtExceptionEngine.h */,
+				F8106FF5176F29BA006E7212 /* UncaughtExceptionEngine.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +184,8 @@
 			files = (
 				F8106FE1176F2621006E7212 /* main.m in Sources */,
 				F8106FE5176F2621006E7212 /* AppDelegate.m in Sources */,
+				F8106FF6176F29BA006E7212 /* LogTracer.m in Sources */,
+				F8106FF7176F29BA006E7212 /* UncaughtExceptionEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +262,7 @@
 		F8106FEF176F2621006E7212 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LogTracer/LogTracer-Prefix.pch";
 				INFOPLIST_FILE = "LogTracer/LogTracer-Info.plist";
@@ -253,6 +274,7 @@
 		F8106FF0176F2621006E7212 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LogTracer/LogTracer-Prefix.pch";
 				INFOPLIST_FILE = "LogTracer/LogTracer-Info.plist";

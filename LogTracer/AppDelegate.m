@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UncaughtExceptionEngine.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,19 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    /* start observing for uncaught exceptions */
+    
+    [UncaughtExceptionEngine observeUncaughtExceptions];
+    
+    /* NSLog examples */
+    
+    NSLog(@"Normal NSLog");
+    NSLogAssert(@"NSLog Assert Level");
+    NSLogDebug(@"NSLog for Debug Level");
+    NSLogError(@"NSLog for Error Level");
+    NSLogInfo(@"NSLog for Info Level");
+    
     return YES;
 }
 
