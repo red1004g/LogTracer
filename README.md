@@ -1,25 +1,40 @@
-#Intro
-LogTracer는 iOS를 개발할 때, Log를 쉽게 분석하게 하기 위해 제작되었습니다. 특히, 단위 테스트 및 App 테스트를 할 때, 예기치 못한 현상으로 앱이 중단되거나 원인을 파악하기 쉽게 하기 위한 것을 목표로 합니다.
-
-중/소규모 프로젝트에서 개발자 이외의 사람과 함께 앱 테스트 시, 원인 분석에 효과적으로 사용 될 수 있습니다.
+# A simple and lightweight log trace For iOS
+When you are developing iOS, LogTracer was made in order to easily analyze the Log. This was made in order to understand why the App is interrupted. In addition, you can efficiently manage to the unit test and app testing with when developing with people of non-developers in a project of small & medium.
 
 LogTracer는 기본적으로 txt 파일로 저장하는데 itunes의 파일 공유를 통해 쉽게 결과를 확인할 수 있습니다.
 
-#How to use
+# How to use
 
-- `<project-name>-Prefix.pch` 파일에 `LogTrace.h` 파일을 import합니다.
+At First, add files to your project:
+  LogTracer.h
+  LogTracer.m
+  UncaughtExceptionEngine.h
+  UncaughtExceptionEngine.m
 
-- 만약 ARC 프로젝트를 사용하신다면, 각 파일에 `-fno-objc-arc` flag 를 붙여주세요. [Apple ARC Guidelines](http://developer.apple.com/library/mac/#releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html)
+Second, In `<project-name>-Prefix.pch`:
+  import "LogTracer.h"
 
-- `AppDelegate.m`파일에 `UncaughtExceptionEngine.h`를 import하고, `[UncaughtExceptionEngine observeUncaughtExceptions];`를 `-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions` 함수 안에 삽입하세요.
+Then In `AppDelegate.m`:
+  import "UncaughtExceptionEngine.h"
+
+Finally, In `-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`:
+  insert `[UncaughtExceptionEngine objserveUncaughtExceptions];`
+
+If, Using ARC project [Apple ARC Guidelines](http://developer.apple.com/library/mac/#releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html):
+  insert flat `-fno-objc-arc`
+
+
+# Write to file
+
+In order to config writing to file In `LogTracer.h`:
+  #define WRITE_TO_FILE YES // YES : write to log file, NO : delete log file
 
 #Support
 
-iOS 5.0이상부터 지원됩니다.
+All version support for you
 
 #Referece
 
-2개의 homepage를 참고했습니다.
-
 - Catch Uncaught Exception : http://chaosinmotion.com/blog/?p=423
+
 - NSLog Overrding : http://stackoverflow.com/questions/7271528/nslog-into-file
