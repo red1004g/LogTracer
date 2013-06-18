@@ -23,19 +23,19 @@ Then In `AppDelegate.m`:
 
 Finally, In `-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`:
 ```
-  insert `[UncaughtExceptionEngine objserveUncaughtExceptions];`
+  insert [UncaughtExceptionEngine objserveUncaughtExceptions];
 ```
 
 If, Using ARC project [Apple ARC Guidelines](http://developer.apple.com/library/mac/#releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html):
 ```
-  insert flat `-fno-objc-arc`
+  insert flag `-fno-objc-arc`
 ```
 
 
 # Write to file
 
 In order to config writing to file In `LogTracer.h`:
-```
+```objc
   #define WRITE_TO_FILE YES // YES : write to log file, NO : delete log file
 ```
 

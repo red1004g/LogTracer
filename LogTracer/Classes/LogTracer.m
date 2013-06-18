@@ -27,9 +27,9 @@ void _Log(NSString *prefix, int line, const char *funcName, NSString *format, ..
 
     fprintf(stderr,"%s[%s]:%s:%d - %s", [prefix UTF8String], getDate(), funcName, line, [msg UTF8String]);
     
-#if WRITE_TO_FILE
+#if WRITE_TO_FILE == YES
     createLogFile();
-    appendLogInFile(prefix, line, funcName, currentDate, msg);
+    appendLogInFile(prefix, line, funcName, getDate(), msg);
 #else
     deleteLogFile();
 #endif
@@ -73,7 +73,7 @@ void appendLogInFile(NSString *prefix, int line, const char *funcName, const cha
     NSString *documentPath = [NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex: 0];
     NSString *logFilePath = [documentPath stringByAppendingPathComponent:@"Logs/log.text"];
     
-    appendLine(logFilePath, [NSString stringWithFormat:@"%@%s[%s]:%d - %@", prefix, funcName, time, line, message]);
+    appendLine(logFilePath, [NSString stringWithFormat:@"%@[%s]%s:%d - %@", prefix, time, funcName, line, message]);
 }
 
 void appendLine(NSString *logFilePath, NSString *logMsg) {

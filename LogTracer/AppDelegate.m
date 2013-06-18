@@ -25,7 +25,7 @@
     /* NSLog examples */
     
     NSLog(@"Normal NSLog");
-    NSLogAssert(@"NSLog Assert Level");
+    NSLogAssert(@"NSLog for Assert Level");
     NSLogDebug(@"NSLog for Debug Level");
     NSLogError(@"NSLog for Error Level");
     NSLogInfo(@"NSLog for Info Level");
