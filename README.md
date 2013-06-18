@@ -1,15 +1,15 @@
 # A simple and lightweight log trace For iOS
 When you are developing iOS, LogTracer was made in order to easily analyze the Log. This was made in order to understand why the App is interrupted. In addition, you can efficiently manage to the unit test and app testing with when developing with people of non-developers in a project of small & medium.
 
-LogTracer는 기본적으로 txt 파일로 저장하는데 itunes의 파일 공유를 통해 쉽게 결과를 확인할 수 있습니다.
-
 # How to use
 
 At First, add files to your project:
+```
   LogTracer.h
   LogTracer.m
   UncaughtExceptionEngine.h
   UncaughtExceptionEngine.m
+```
 
 Second, In `<project-name>-Prefix.pch`:
   import "LogTracer.h"
