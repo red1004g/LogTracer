@@ -1,9 +1,9 @@
 # Log Tracer For iOS
 iOS Application을 만들 때, LogTracer는 다양한 상황에 대한 로그들을 파일로 제공하기 위해 만들어졌습니다. App의 갑자기 종료되거나 충돌에 대한 원인을 쉽게 분석해보세요. 특히, 비-개발자분들과 함께 App 테스팅 시 효과적으로 원인을 분석 할 수 있습니다.
 
-# 문서
+## 문서
 
-## 사용방법
+### 사용방법
 
 - 프로젝트에 파일 추가
 ```
@@ -34,7 +34,7 @@ iOS Application을 만들 때, LogTracer는 다양한 상황에 대한 로그들
 ```
 
 
-## 로그 파일 쓰기
+### 로그 파일 쓰기
 
 - `LogTracer.h`의 `#define`으로 설정할 수 있습니다.
 
@@ -44,15 +44,15 @@ iOS Application을 만들 때, LogTracer는 다양한 상황에 대한 로그들
   #define WRITE_TO_FILE YES // YES : write to log file, NO : delete log file
 ```
 
-## 로그 파일 보기
+### 로그 파일 보기
 
 - iTunes에서 `응용 프로그램` > `파일 공유` > `앱 이름` > `Log 폴더`를 다운받으시면 됩니다.
 
-## Support
+### Support
 
 - 모든 버전에서 호환됩니다.
 
-## Referece
+### Referece
 
 - Catch Uncaught Exception : http://chaosinmotion.com/blog/?p=423
 
