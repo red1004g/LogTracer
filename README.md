@@ -5,7 +5,7 @@ iOS Application을 만들 때, LogTracer는 다양한 상황에 대한 로그들
 
 ### 사용방법
 
-- 프로젝트에 파일 추가
+#### 파일 추가하기
 ```
   LogTracer.h
   LogTracer.m
@@ -13,6 +13,7 @@ iOS Application을 만들 때, LogTracer는 다양한 상황에 대한 로그들
   UncaughtExceptionEngine.m
 ```
 
+#### Import 하기
 - `<project-name>-Prefix.pch`에 import
 ```
   import "LogTracer.h"
@@ -23,11 +24,13 @@ iOS Application을 만들 때, LogTracer는 다양한 상황에 대한 로그들
   import "UncaughtExceptionEngine.h"
 ```
 
+#### 함수 추가하기
 - `-(BOOL)application:didFinishLaunchingWithOptions:`에 추가
 ```
   [UncaughtExceptionEngine objserveUncaughtExceptions];
 ```
 
+#### 설정 추가하기
 - `<project-name>-Info.plist`에 row 추가
 
 만약, NO로 설정하면 iTunes 파일 공유 리스트에 앱이 뜨지 않습니다.
@@ -35,6 +38,7 @@ iOS Application을 만들 때, LogTracer는 다양한 상황에 대한 로그들
   Application requires iPhone environment 값을 YES로 한다.
 ```
 
+#### ARC 프로젝트
 - 만약 ARC 프로젝트 사용할 경우 flag 추가([Apple ARC Guidelines](http://developer.apple.com/library/mac/#releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html))
 ```
   `-fno-objc-arc`
